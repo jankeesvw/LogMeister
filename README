@@ -1,0 +1,13 @@
+- Why Log Meister
+
+There are several Loggers used by Flash developers I created a wrapper which you can use for the most common loggers. You connect to loggers with a 'connector'. All 3rth party code of the loggers is included in this package, so if you want to try another logger, you just need to change one line of code.
+
+- Included loggers
+
+Trazzle (1.2 and 1.5)
+Sosmax
+Flash (regular trace)
+Alcon logger
+Monster Debugger
+Server (php server to be open sourced)
+
