@@ -47,6 +47,13 @@ warn('warn');
 trace('regular trace');
 </pre>
 
+# The Loggers
+
+### Trazzle (One Point Two)
+
+![Alt One point two](http://github.com/base42/LogMeister/raw/master/examples/loggers/trazzleonepointtwo.png)
+
+
 # Creating your own connector
 
 Creating a custom connector for your own logger is not hard, as an example I added the FlashLogger below. The FlashLogger sends regular traces.
