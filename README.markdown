@@ -2,9 +2,6 @@
 
 There are several Loggers used by Flash developers I created a wrapper which you can use for the most common loggers. You connect to loggers with a ‘connector’. All 3rth party code of the loggers is included in this package, so if you want to try another logger, you just need to change one line of code.
 
-* An item in a bulleted (unordered) list
-* Another item in a bulleted list
-
 # Included loggers
 
 * Trazzle (1.2 and 1.5)
@@ -13,6 +10,7 @@ There are several Loggers used by Flash developers I created a wrapper which you
 * Alcon logger
 * Monster Debugger
 * Server (php server to be open sourced)
+* Yalog
 
 # Usage
 
