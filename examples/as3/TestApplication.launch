@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.powerflasher.fdt.ui.MxmlcGroup">
 <stringAttribute key="APP_ARGUMENTS" value=""/>
-<stringAttribute key="ARGUMENTS" value="-default-size 550 400 -default-frame-rate 31 -default-background-color 0xFFFFFF -library-path {flexSDK}/frameworks/locale/en_US -verbose-stacktraces=true"/>
+<stringAttribute key="ARGUMENTS" value="-default-size 550 400 -default-frame-rate 31 -default-background-color 0xFFFFFF -library-path {flexSDK}/frameworks/locale/en_US -verbose-stacktraces=true -debug=true"/>
 <stringAttribute key="FLEX_SDK_NAME" value="Flex_3_SDK_0_Pure"/>
 <booleanAttribute key="KILL_PREVIUOS_VIEWER" value="false"/>
-<stringAttribute key="MAIN_CLASS" value="example/as3/Main.as"/>
+<stringAttribute key="MAIN_CLASS" value="examples/as3/Main.as"/>
 <stringAttribute key="OUTPUT" value="Main.swf"/>
 <booleanAttribute key="PASS_CP" value="true"/>
 <booleanAttribute key="PASS_MAIN_CLASS" value="true"/>

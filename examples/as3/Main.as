@@ -1,4 +1,5 @@
 package {
+	import logmeister.LogMeister;
 	import logmeister.connectors.FlashConnector;
 	import logmeister.connectors.MonsterDebuggerConnector;
 	import logmeister.connectors.SosMaxConnector;
@@ -9,7 +10,14 @@ package {
 	import flash.text.TextField;
 
 	/**
-	 * @author Jankees van Woezik / Base42.nl
+	 *
+	 * LogMeister demo application.
+	 * 
+	 * If you want to see the stacktraces in your logging application add this to your compiler arguments:
+	 * -verbose-stacktraces=true
+	 *
+	 * That's all! Have fun!
+	 *
 	 */
 	public class Main extends Sprite {
 
@@ -33,6 +41,28 @@ package {
 			status('status');
 			warn('warn');
 			trace('regular trace');
+			
+			var sp : Sprite = new Sprite();
+			sp.graphics.beginFill(0xff0000);
+			sp.graphics.drawRect(0, 0, 10, 10);
+			sp.graphics.endFill();
+			
+			TrazzleConnector.logDisplayObject(sp);
+			TrazzleConnector.logDisplayObject(textField, false);
+			
+			someFunction();
+		}
+
+		private function someFunction() : void {
+			anotherFunction();
+		}
+
+		private function anotherFunction() : void {
+			showStackTraceLog();
+		}
+
+		private function showStackTraceLog() : void {
+			debug('I have a stacktrace');
 		}
 	}
 }
