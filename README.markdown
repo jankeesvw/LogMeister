@@ -7,7 +7,6 @@ There are several Loggers used by Flash developers I created a wrapper which you
 * Trazzle (1.2 and 1.5)
 * Sosmax
 * Flash (regular trace)
-* Alcon logger
 * Monster Debugger
 * Server (php server to be open sourced)
 * Yalog
