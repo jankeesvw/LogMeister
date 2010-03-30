@@ -20,15 +20,16 @@ There are several Loggers used by Flash developers I created a wrapper which you
 
 First you need to add one or multiple Loggers to your application, to connect to a logger LogMeister uses Connectors. Every connector has it's own features below is an example usage of all included connectors:
 
-`
+<pre>
 import logmeister.LogMeister;
 import logmeister.connectors.*;
+
 LogMeister.addLogger(new TrazzleConnector(stage, "Application Name"));
 LogMeister.addLogger(new SosMaxConnector());
 LogMeister.addLogger(new MonsterDebuggerConnector(stage));
 LogMeister.addLogger(new YalogConnector());
 LogMeister.addLogger(new FlashConnector());
-`
+</pre>
 
 As you can see Trazzle and the MonsterDebugger need the stage as a reference.
 
@@ -36,7 +37,7 @@ As you can see Trazzle and the MonsterDebugger need the stage as a reference.
 
 If you want to send a log to all your active loggers pick one of the following functions. (You don't need to import anything!!)
 
-`
+<pre>
 critical('critical');
 debug('debug');
 error('error');
@@ -46,13 +47,13 @@ notice('notice');
 status('status');
 warn('warn');
 trace('regular trace');
-`
+</pre>
 
 # Creating your own connector
 
 Creating a custom connector for your own logger is not hard, as an example I added the FlashLogger below. The FlashLogger sends regular traces.
 
-`
+<pre>
 package logmeister.connectors {
 
 	public class FlashConnector extends LogMeisterConnector implements ILogMeisterConnector {
@@ -93,4 +94,4 @@ package logmeister.connectors {
 		}
 	}
 }
-`
+</pre>
