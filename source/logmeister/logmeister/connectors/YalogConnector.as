@@ -39,7 +39,7 @@
 package logmeister.connectors {
 	import nl.acidcats.yalog.Yalog;
 
-	public class YalogConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class YalogConnector extends BaseConnector implements ILogMeisterConnector {
 
 		public function init() : void {
 		}

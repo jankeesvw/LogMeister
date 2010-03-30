@@ -47,7 +47,7 @@ package logmeister.connectors {
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
 
-	public class TrazzleConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class TrazzleConnector extends BaseConnector implements ILogMeisterConnector {
 
 		private var _stage : Stage;
 		private var _title : String;

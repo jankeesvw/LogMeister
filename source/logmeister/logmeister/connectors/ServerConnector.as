@@ -42,7 +42,7 @@ package logmeister.connectors {
 	import flash.net.URLRequestMethod;
 	import flash.net.URLVariables;
 
-	public class ServerConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class ServerConnector extends BaseConnector implements ILogMeisterConnector {
 
 		public var serverPath : String;
 		public var projectId : String;

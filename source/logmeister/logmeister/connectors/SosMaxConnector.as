@@ -47,7 +47,7 @@ package logmeister.connectors {
 	import flash.system.Capabilities;
 	import flash.utils.Timer;
 
-	public class SosMaxConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class SosMaxConnector extends BaseConnector implements ILogMeisterConnector {
 
 		private var socket : XMLSocket;
 		private var _stack : Array;

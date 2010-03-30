@@ -41,7 +41,7 @@ package logmeister.connectors {
 
 	import flash.display.DisplayObject;
 
-	public class MonsterDebuggerConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class MonsterDebuggerConnector extends BaseConnector implements ILogMeisterConnector {
 
 		private var _stage : DisplayObject;
 		private static const color_debug : uint = 0xa6e22e;

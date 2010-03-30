@@ -38,7 +38,7 @@
  */
 package logmeister.connectors {
 
-	public class FlashConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class FlashConnector extends BaseConnector implements ILogMeisterConnector {
 
 		public function init() : void {
 		}

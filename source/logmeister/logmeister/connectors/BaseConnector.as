@@ -38,7 +38,7 @@
  */
 package logmeister.connectors {
 
-	public class LogMeisterConnector {
+	internal class BaseConnector {
 
 		protected var _firstLineNumber : uint = 5;
 
