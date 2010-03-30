@@ -49,10 +49,17 @@ trace('regular trace');
 
 # The Loggers
 
-### Trazzle (One Point Two)
-
-![Alt One point two](http://github.com/base42/LogMeister/raw/master/examples/loggers/trazzleonepointtwo.png)
-
+### Trazzle
+1.2
+![Alt Trazzle One point two](http://github.com/base42/LogMeister/raw/master/docs/loggers/trazzleonepointtwo.png)
+1.5
+![Alt Trazzle One point five](http://github.com/base42/LogMeister/raw/master/docs/loggers/trazzleonepointfive.png)
+### Yala
+![Alt Yala](http://github.com/base42/LogMeister/raw/master/docs/loggers/yala.png)
+### SOSMax
+![Alt Sos max](http://github.com/base42/LogMeister/raw/master/docs/loggers/sosmax.png)
+### De Monster Debugger
+![Alt De Monster Debugger](http://github.com/base42/LogMeister/raw/master/docs/loggers/monsterdebugger.png)
 
 # Creating your own connector
 

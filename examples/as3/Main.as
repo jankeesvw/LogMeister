@@ -26,11 +26,11 @@ package {
 			textField.text = "Check your logger...";
 			addChild(textField);
 			
-			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
+//			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
 			LogMeister.addLogger(new SosMaxConnector());
-			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
-			LogMeister.addLogger(new YalogConnector());
-			LogMeister.addLogger(new FlashConnector());
+//			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
+//			LogMeister.addLogger(new YalogConnector());
+//			LogMeister.addLogger(new FlashConnector());
 			
 			critical('critical');
 			debug('debug');
@@ -46,10 +46,10 @@ package {
 			sp.graphics.beginFill(0xff0000);
 			sp.graphics.drawRect(0, 0, 10, 10);
 			sp.graphics.endFill();
-			
-			TrazzleConnector.logDisplayObject(sp);
-			TrazzleConnector.logDisplayObject(textField, false);
-			
+//			
+//			TrazzleConnector.logDisplayObject(sp);
+//			TrazzleConnector.logDisplayObject(textField, false);
+//			
 			someFunction();
 		}
 
