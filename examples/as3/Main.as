@@ -26,8 +26,8 @@ package {
 			textField.text = "Check your logger...";
 			addChild(textField);
 			
-//			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
-			LogMeister.addLogger(new SosMaxConnector());
+			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
+//			LogMeister.addLogger(new SosMaxConnector());
 //			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
 //			LogMeister.addLogger(new YalogConnector());
 //			LogMeister.addLogger(new FlashConnector());
