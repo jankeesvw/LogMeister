@@ -33,11 +33,10 @@
  *	You should have received a copy of the GNU Lesser General Public License
  *	along with Log Meister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.1
+ *	Version 1.2
  *	
  */
 package logmeister.connectors {
-	import com.nesium.TrazzleLoggerOnePointTwo;
 	import com.nesium.logging.TrazzleLogger;
 	import com.nesium.ui.StatusBar;
 	import com.nesium.zz_init;
@@ -52,14 +51,8 @@ package logmeister.connectors {
 		private var _stage : Stage;
 		private var _title : String;
 		private var _monitorPerformance : Boolean;
-		private var _backwardsCompatible : Boolean;
-		private var _trazzleLoggerOnePointTwo : TrazzleLoggerOnePointTwo;
 
-		/**
-		 * @param inBackwardsCompatible if set to true, this connector also logs to Trazzle 1.2
-		 */
-		public function TrazzleConnector(inStage : Stage, inTitle : String,inMonitorPerformance : Boolean = true,inBackwardsCompatible : Boolean = true) {
-			_backwardsCompatible = inBackwardsCompatible;
+		public function TrazzleConnector(inStage : Stage, inTitle : String,inMonitorPerformance : Boolean = true) {
 			_monitorPerformance = inMonitorPerformance;
 			_stage = inStage;
 			_title = inTitle;
@@ -68,7 +61,6 @@ package logmeister.connectors {
 		public function init() : void {
 			zz_init(_stage, _title);
 			if(_monitorPerformance) zz_monitor(true);
-			if(_backwardsCompatible) _trazzleLoggerOnePointTwo = new TrazzleLoggerOnePointTwo();
 		}
 
 		public function sendDebug(... args) : void {
@@ -110,7 +102,6 @@ package logmeister.connectors {
 		}
 
 		private function send(...rest) : void {
-			if(_trazzleLoggerOnePointTwo) _trazzleLoggerOnePointTwo.log(rest.toString());
 			TrazzleLogger.instance().log(rest.toString(), 3);
 		}
 

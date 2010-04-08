@@ -33,7 +33,7 @@
  *	You should have received a copy of the GNU Lesser General Public License
  *	along with Log Meister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.1
+ *	Version 1.2
  *	
  *	Thanks to Eric-Paul Lecluse for the help on this connector 
  *	
