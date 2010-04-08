@@ -27,10 +27,10 @@ package {
 			addChild(textField);
 			
 			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
-//			LogMeister.addLogger(new SosMaxConnector());
-//			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
-//			LogMeister.addLogger(new YalogConnector());
-//			LogMeister.addLogger(new FlashConnector());
+			LogMeister.addLogger(new SosMaxConnector());
+			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
+			LogMeister.addLogger(new YalogConnector());
+			LogMeister.addLogger(new FlashConnector());
 			
 			critical('critical');
 			debug('debug');
@@ -42,15 +42,16 @@ package {
 			warn('warn');
 			trace('regular trace');
 			
+			someFunction();
+			
 			var sp : Sprite = new Sprite();
 			sp.graphics.beginFill(0xff0000);
 			sp.graphics.drawRect(0, 0, 10, 10);
 			sp.graphics.endFill();
-//			
-//			TrazzleConnector.logDisplayObject(sp);
-//			TrazzleConnector.logDisplayObject(textField, false);
-//			
-			someFunction();
+			
+			TrazzleConnector.logDisplayObject(sp);
+			TrazzleConnector.logDisplayObject(textField, false);
+			
 		}
 
 		private function someFunction() : void {

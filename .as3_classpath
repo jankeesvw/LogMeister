@@ -4,7 +4,6 @@
     <AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">source/loggers/trazzle</AS3Classpath>
     <AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">source/loggers/yala</AS3Classpath>
     <AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">source/loggers/monsterdebugger</AS3Classpath>
-    <AS3Classpath generateProblems="false" type="source" useAsSharedCode="false">source/loggers/trazzleonepointtwo</AS3Classpath>
     <AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">examples/as3</AS3Classpath>
     <AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">playerglobal.swc</AS3Classpath>
 </AS3Classpath>
