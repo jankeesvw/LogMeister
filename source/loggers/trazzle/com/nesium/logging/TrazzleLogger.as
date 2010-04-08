@@ -1,24 +1,18 @@
-package com.nesium.logging
-{
-	
-	import com.nesium.logging.zz;
+package com.nesium.logging {
 	import com.nesium.remoting.DuplexGateway;
-	
+
 	import flash.display.BitmapData;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.TimerEvent;
 	import flash.geom.Rectangle;
-	import flash.net.registerClassAlias;
 	import flash.system.System;
 	import flash.utils.ByteArray;
+	import flash.utils.Timer;
 	import flash.utils.describeType;
 	import flash.utils.getTimer;
-	import flash.utils.Timer;
-	
-	
-	
+
 	public class TrazzleLogger extends EventDispatcher
 	{
 		
@@ -259,9 +253,9 @@ package com.nesium.logging
 	}
 }
 
-
 import flash.net.registerClassAlias;
 import flash.utils.getTimer;
+
 
 internal class LogMessageVO
 {
