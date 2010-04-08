@@ -34,8 +34,7 @@ package br.com.stimuli.string
         *   @see br.com.stimuli.string 
         */
          public function printf(raw : String, ...rest) : String{
-         
-	        /**
+         	/**
 			* Pretty ugly!
 			*   basicaly
 			*   % -> the start of a substitution hole

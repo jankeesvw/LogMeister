@@ -167,8 +167,16 @@ package com.nesium.remoting
 				var header:AMFMessageHeader = new AMFMessageHeader();
 				header.name = ba.readUTF();
 				header.mustUnderstand = ba.readBoolean();
-				ba.readUnsignedInt(); // header length
-				header.data = ba.readObject();
+				var headerDataLen:Number = ba.readUnsignedInt(); // header length
+				if (am.encoding == ObjectEncoding.AMF3){
+					var headerDataBa:ByteArray = new ByteArray();
+					headerDataBa.objectEncoding = am.encoding;
+					ba.readBytes(headerDataBa, 0, headerDataLen);
+					headerDataBa.readByte(); // AVMPlus marker
+					body.data = headerDataBa.readObject();
+				}else{
+					header.data = ba.readObject();
+				}
 				am.headers.push(header);
 			}
 			am.bodies = [];
@@ -178,8 +186,16 @@ package com.nesium.remoting
 				var body:AMFMessageBody = new AMFMessageBody();
 				body.targetURI = ba.readUTF();
 				body.responseURI = ba.readUTF();
-				ba.readUnsignedInt(); // body length
-				body.data = ba.readObject();
+				var bodyDataLen:Number = ba.readUnsignedInt(); // body length
+				if (am.encoding == ObjectEncoding.AMF3){
+					var bodyDataBa:ByteArray = new ByteArray();
+					bodyDataBa.objectEncoding = am.encoding;
+					ba.readBytes(bodyDataBa, 0, bodyDataLen);
+					bodyDataBa.readByte(); // AVMPlus marker
+					body.data = bodyDataBa.readObject();
+				}else{
+					body.data = ba.readObject();
+				}
 				am.bodies.push(body);
 			}
 			return am;
@@ -228,7 +244,6 @@ package com.nesium.remoting
 		
 		protected function processActionMessage(am:AMFActionMessage):void
 		{
-//			log('processActionMessage');
 			for each (var body:AMFMessageBody in am.bodies)
 			{
 				var targetComponents:Array = body.targetURI.split('.');
@@ -243,6 +258,12 @@ package com.nesium.remoting
 					var resultType:String = methodComponents[2];
 					processResponse(targetComponents[0], methodName, body.data, index, resultType);
 					continue;
+				}
+				if (!service){
+					throw new Error('No service with name ' + targetComponents[0] + ' registered!');
+				}else if (!service.hasOwnProperty(methodName)){
+					throw new Error('Service ' + targetComponents[0] + ' has no method named ' + 
+						methodName);
 				}
 				var result:* = service[methodName].apply(service, (body.data is Array ? 
 					body.data : [body.data]));

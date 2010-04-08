@@ -1,5 +1,5 @@
-package
-com.nesium{
+package com.nesium
+{
 	import flash.utils.getDefinitionByName;
 	public function logf(format:String, ...rest):void
 	{

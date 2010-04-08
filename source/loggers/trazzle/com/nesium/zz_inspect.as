@@ -1,5 +1,5 @@
-package
-com.nesium{
+package com.nesium
+{
 	import flash.utils.getDefinitionByName;
 	public function zz_inspect(obj:*):void
 	{

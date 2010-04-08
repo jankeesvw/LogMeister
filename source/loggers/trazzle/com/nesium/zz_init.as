@@ -1,5 +1,5 @@
-package
-com.nesium{
+package com.nesium
+{
 	import flash.display.Stage;
 	import flash.utils.getDefinitionByName;
 	public function zz_init(theStage:Stage, title:String):void

@@ -44,5 +44,11 @@ package com.nesium.remoting
 		{
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
+		
+		override public function toString():String{
+			return '[InvocationResult] serviceName: ' + serviceName + ' methodName: ' + methodName + 
+				' arguments: ' + arguments + ' invocationIndex: ' + invocationIndex + ' result: ' + 
+				result + ' status: ' + status + ' context: ' + context;
+		}
 	}
 }

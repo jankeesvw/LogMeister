@@ -1,5 +1,5 @@
-package
-com.nesium{
+package com.nesium
+{
 	import flash.display.BitmapData;
 	public function log(...rest):void
 	{
