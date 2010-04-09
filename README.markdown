@@ -1,21 +1,31 @@
-# Why LogMeister
+# Why I created LogMeister
 
-There are several Loggers used by Flash developers I created a wrapper which you can use for the most common loggers. You connect to loggers with a ‘connector’. All 3rth party code of the loggers is included in this package, so if you want to try another logger, you just need to change one line of code.
+There are several Loggers used by Flash developers, some like logger A and others like B. I switch between loggers from time to time. I like Trazzle because it's lightning fast and I use MonsterDebugger because is really extensive. 
+
+I needed a easy way to switch between loggers. That's why I created LogMeister. LogMeister is a wrapper which you can use for every loggers (I have used in the last years).
+
+You connect to loggers with a ‘connector’. All 3rth party code of loggers is included in this package. So switching between loggers is as easy as adding one line of code. Getting all loggers out of your project is as easy as removing all connectors. Another thing is all code is in one swc file which makes it super maintainable.
 
 # Included loggers
 
-* Trazzle (1.2 and 1.5)
+By default 6 loggers are included. These are the loggers I happen to use over the last years. It's really easy to add another logger skip to the ‘Creating your own connector’ section if you want to know how.
+
+Included loggers:
+
+* Trazzle (1.5.1)
 * Sosmax
 * Flash (regular trace)
 * Monster Debugger
-* Server (php server to be open sourced)
 * Yalog
+* PHP Server (to be open sourced)
 
 # Usage
 
 ## Adding loggers
 
-First you need to add one or multiple Loggers to your application, to connect to a logger LogMeister uses Connectors. Every connector has it's own features below is an example usage of all included connectors:
+First you need to add one, or multiple Connectors to LogMeister.
+
+Below you can see how to add all loggers (not recommended).
 
 <pre>
 import logmeister.LogMeister;
@@ -48,10 +58,7 @@ trace('regular trace');
 
 # The Loggers
 
-### Trazzle
-1.2
-![Alt Trazzle One point two](http://github.com/base42/LogMeister/raw/master/docs/loggers/trazzleonepointtwo.png)
-1.5
+### Trazzle 1.5.x
 ![Alt Trazzle One point five](http://github.com/base42/LogMeister/raw/master/docs/loggers/trazzleonepointfive.png)
 ### Yala
 ![Alt Yala](http://github.com/base42/LogMeister/raw/master/docs/loggers/yala.png)
