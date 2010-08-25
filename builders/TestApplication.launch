@@ -8,6 +8,7 @@
 <stringAttribute key="OUTPUT" value="Main.swf"/>
 <booleanAttribute key="PASS_CP" value="true"/>
 <booleanAttribute key="PASS_MAIN_CLASS" value="true"/>
+<booleanAttribute key="PASS_RSLS" value="true"/>
 <booleanAttribute key="PASS_SWCS" value="true"/>
 <intAttribute key="PLAYER_HEIGHT" value="400"/>
 <intAttribute key="PLAYER_WIDTH" value="550"/>
@@ -19,6 +20,7 @@
 <stringAttribute key="START_SWF_LOCATION" value="Main.swf"/>
 <stringAttribute key="START_SWF_WITH" value="External SWF Viewer"/>
 <booleanAttribute key="USE_GLOBAL_FCSH_LOCATION" value="true"/>
+<booleanAttribute key="USE_PROJECT_COMPILER_ARGUMENTS" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/LogMeister"/>
 </listAttribute>

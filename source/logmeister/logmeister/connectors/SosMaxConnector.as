@@ -1,5 +1,5 @@
 /*
- *	Log Meister for ActionScript 3.0
+ *	LogMeister for ActionScript 3.0
  *	Copyright © 2010 Base42.nl
  *	All rights reserved.
  *	
@@ -15,27 +15,28 @@
  *	this list of conditions and the following disclaimer in the documentation
  *	and/or other materials provided with the distribution.
  *	
- *	- Neither the name of the Log Meister nor the names of its contributors
+ *	- Neither the name of the LogMeister nor the names of its contributors
  *	may be used to endorse or promote products derived from this software
  *	without specific prior written permission.
  *	
  *	
- *	Log Meister is free software: you can redistribute it and/or modify
+ *	LogMeister is free software: you can redistribute it and/or modify
  *	it under the terms of the GNU Lesser General Public License as published by
  *	the Free Software Foundation, either version 3 of the License, or
  *	(at your option) any later version.
  *	
- *	Log Meister is distributed in the hope that it will be useful,
+ *	LogMeister is distributed in the hope that it will be useful,
  *	but WITHOUT ANY WARRANTY; without even the implied warranty of
  *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *	GNU Lesser General Public License for more details.
  *	
  *	You should have received a copy of the GNU Lesser General Public License
- *	along with Log Meister.  If not, see <http://www.gnu.org/licenses/>.
+ *	along with LogMeister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.2
+ *	Version 1.3
  *	
- *	Thanks to Eric-Paul Lecluse for the help on this connector 
+ *	Thanks to Eric-Paul Lecluse for the help on this connector
+ *	Thanks to Riccardo Prandini for the update
  *	
  */
 package logmeister.connectors {
@@ -68,8 +69,12 @@ package logmeister.connectors {
 			connect();
 		}
 
+		public function sendStatus(...args) : void {
+			sendSOSMessage(String(args), getSender(), "trace");
+		}
+
 		public function sendDebug(...args) : void {
-			sendSOSMessage(String(args), getSender(), "temp");
+			sendSOSMessage(String(args), getSender(), "debug");
 		}
 
 		public function sendInfo(...args) : void {
@@ -77,11 +82,15 @@ package logmeister.connectors {
 		}
 
 		public function sendNotice(...args) : void {
-			sendSOSMessage(String(args), getSender(), "error");
+			sendSOSMessage(String(args), getSender(), "warning");
 		}
 
 		public function sendWarn(...args) : void {
 			sendSOSMessage(String(args), getSender(), "warn");
+		}
+
+		public function sendCritical(...args) : void {
+			sendSOSMessage(String(args), getSender(), "severe");
 		}
 
 		public function sendError(...args) : void {
@@ -90,14 +99,6 @@ package logmeister.connectors {
 
 		public function sendFatal(...args) : void {
 			sendSOSMessage(String(args), getSender(), "fatal");
-		}
-
-		public function sendCritical(...args) : void {
-			sendSOSMessage(String(args), getSender(), "error");
-		}
-
-		public function sendStatus(...args) : void {
-			sendSOSMessage(String(args), getSender(), "info");
 		}
 
 		private function connect() : void {
