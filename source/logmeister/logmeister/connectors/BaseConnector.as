@@ -33,31 +33,46 @@
  *	You should have received a copy of the GNU Lesser General Public License
  *	along with LogMeister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.3
+ *	Version 1.4
  *	
  */
 package logmeister.connectors {
+	import flash.system.Capabilities;
 
 	internal class BaseConnector {
 
 		protected var _firstLineNumber : uint = 5;
 
 		protected function getSender() : String {
+			var senderCompleteErrorLine : String = new Error().getStackTrace().split("\n")[_firstLineNumber];
 			try {
-           	
-				var senderCompleteErrorLine : String = new Error().getStackTrace().split("\n")[_firstLineNumber];
-				var reg : RegExp = new RegExp(/[\[|\/]([\w.:]+)?:(\d+)\]/gi);
-				var sender : Array = reg.exec(senderCompleteErrorLine);
-				var s : String = sender[1] + ":" + sender[2];
+				
+				var os : String = Capabilities.os;
+
+				var s : String;
+				var reg : RegExp;
+				var sender : Array;
+				if (os.indexOf("Win") == 0) {
+					// windows
+					reg = new RegExp(/\s([\w\/]*\(\))\[[\w.:\\]+\\(\w*\.as):(\d+)\]/gi);
+					sender = reg.exec(senderCompleteErrorLine);
+					s = sender[1] + "@" + sender[2] + ":" + sender[3] ;
+				} else { 
+					// mac
+					reg = new RegExp(/[\[|\/]([\w.:]+)?:(\d+)\]/gi);
+					sender = reg.exec(senderCompleteErrorLine);
+					s = sender[1] + ":" + sender[2];
+				}
+								
 				if(s.indexOf("NaN") == -1) {
 					return s; // add -verbose-stacktracing=true to the compiler settings
 				} else {
-					return "";
+					return senderCompleteErrorLine;
 				}
 			} catch (e : Error) {
-				return "";
+				return senderCompleteErrorLine;
 			}
-			return "";
+			return "Error getting sender";
 		}
 	}
 }

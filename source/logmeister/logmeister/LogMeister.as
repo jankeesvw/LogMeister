@@ -33,7 +33,7 @@
  *	You should have received a copy of the GNU Lesser General Public License
  *	along with LogMeister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.3
+ *	Version 1.4
  *	
  */
 package logmeister {
@@ -43,7 +43,7 @@ package logmeister {
 
 	public class LogMeister {
 
-		public static const VERSION : String = "Version 1.3";
+		public static const VERSION : String = "Version 1.4";
 		private static var loggers : Array = new Array();
 
 		/*
