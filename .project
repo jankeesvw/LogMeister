@@ -14,11 +14,4 @@
 	<natures>
 		<nature>com.powerflasher.fdt.core.FlashNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>playerglobal.swc</name>
-			<type>1</type>
-			<locationURI>Flex_3_SDK_0/frameworks/libs/player/9/playerglobal.swc</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

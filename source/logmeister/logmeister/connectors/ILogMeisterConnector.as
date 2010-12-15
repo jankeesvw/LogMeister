@@ -33,7 +33,7 @@
  *	You should have received a copy of the GNU Lesser General Public License
  *	along with LogMeister.  If not, see <http://www.gnu.org/licenses/>.
  *	
- *	Version 1.4
+ *	Version 1.5
  *	
  */
  package logmeister.connectors {

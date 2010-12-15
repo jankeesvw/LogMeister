@@ -1,4 +1,5 @@
 package {
+	import logmeister.connectors.FirebugConnector;
 	import logmeister.LogMeister;
 	import logmeister.connectors.FlashConnector;
 	import logmeister.connectors.MonsterDebuggerConnector;
@@ -31,6 +32,7 @@ package {
 			LogMeister.addLogger(new MonsterDebuggerConnector(stage));
 			LogMeister.addLogger(new YalogConnector());
 			LogMeister.addLogger(new FlashConnector());
+			LogMeister.addLogger(new FirebugConnector());
 			
 			critical('critical');
 			debug('debug');

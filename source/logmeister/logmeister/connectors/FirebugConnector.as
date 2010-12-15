@@ -37,42 +37,47 @@
  *	
  */
 package logmeister.connectors {
+	import flash.external.ExternalInterface;
 
-	public class FlashConnector extends BaseConnector implements ILogMeisterConnector {
+	public class FirebugConnector extends BaseConnector implements ILogMeisterConnector {
+		private static const LOG_FUNCTION : String = "console.log";
+		private static const INFO_FUNCTION : String = "console.info";
+		private static const WARN_FUNCTION : String = "console.warn";
+		private static const ERROR_FUNCTION : String = "console.error";
 
 		public function init() : void {
 		}
 
-		public function sendDebug(...args) : void {
-			trace("debug    : " + args + " " + getSender());
+		public function sendDebug(...args : *) : void {
+			ExternalInterface.call(LOG_FUNCTION, "DEBUG");
 		}
 
-		public function sendInfo(...args) : void {
-			trace("info     : " + args + " " + getSender());
+		public function sendInfo(...args : *) : void {
+			ExternalInterface.call(INFO_FUNCTION, String(args));
 		}
 
-		public function sendNotice(...args) : void {
-			trace("notice   : " + args + " " + getSender());
+		public function sendNotice(...args : *) : void {
+			ExternalInterface.call(INFO_FUNCTION, String(args));
 		}
 
-		public function sendWarn(...args) : void {
-			trace("warn     : " + args + " " + getSender());
+		public function sendWarn(...args : *) : void {
+			ExternalInterface.call(WARN_FUNCTION, String(args));
 		}
 
-		public function sendError(...args) : void {
-			trace("error    : " + args + " " + getSender());
+		public function sendError(...args : *) : void {
+			ExternalInterface.call(ERROR_FUNCTION, String(args));
 		}
 
-		public function sendFatal(...args) : void {
-			trace("fatal    : " + args + " " + getSender());
+		public function sendFatal(...args : *) : void {
+			ExternalInterface.call(ERROR_FUNCTION, String(args));
 		}
 
-		public function sendCritical(...args) : void {
-			trace("critical : " + args + " " + getSender());
+		public function sendCritical(...args : *) : void {
+			ExternalInterface.call(WARN_FUNCTION, String(args));
 		}
 
-		public function sendStatus(...args) : void {
-			trace("status   : " + args + " " + getSender());
+		public function sendStatus(...args : *) : void {
+			ExternalInterface.call(INFO_FUNCTION, String(args));
 		}
 	}
 }

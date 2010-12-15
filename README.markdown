@@ -12,12 +12,13 @@ By default 6 loggers are included. These are the loggers I happen to use over th
 
 Included loggers:
 
-* Trazzle (1.5.1)
+* Firebug (NEW!)
+* Trazzle
 * Sosmax
-* Flash (regular trace)
+* Flash (regular traces)
 * Monster Debugger
 * Yalog
-* PHP Server (to be open sourced)
+* Server (to be open sourced)
 
 # Usage
 
@@ -55,17 +56,6 @@ status('status');
 warn('warn');
 trace('regular trace');
 </pre>
-
-# The Loggers
-
-### Trazzle 1.5.x
-![Alt Trazzle One point five](http://github.com/base42/LogMeister/raw/master/docs/loggers/trazzleonepointfive.png)
-### Yala
-![Alt Yala](http://github.com/base42/LogMeister/raw/master/docs/loggers/yala.png)
-### SOSMax
-![Alt Sos max](http://github.com/base42/LogMeister/raw/master/docs/loggers/sosmax.png)
-### De Monster Debugger
-![Alt De Monster Debugger](http://github.com/base42/LogMeister/raw/master/docs/loggers/monsterdebugger.png)
 
 # Creating your own connector
 
