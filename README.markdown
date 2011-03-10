@@ -1,18 +1,16 @@
-# Why I created LogMeister
+# Philosophy behind LogMeister
 
-There are several Loggers used by Flash developers, some like logger A and others like B. I switch between loggers from time to time. I like Trazzle because it's lightning fast and I use MonsterDebugger because is really extensive. 
+There are several Loggers used by Flash developers, some like Trazzle and others like the MonsterDebugger. I switch between loggers from time to time. I like Trazzle because it's super fast and I use MonsterDebugger because is really extensive. Therefor I needed an easy way to switch between loggers. That's why I created LogMeister. LogMeister is a simple logger wrapper which you can use for every loggers (I have used in the last four years).
 
-I needed a easy way to switch between loggers. That's why I created LogMeister. LogMeister is a wrapper which you can use for every loggers (I have used in the last years).
+You connect to loggers with a ‘connector’. All 3rth party code of loggers is included in this package, so switching loggers is as easy as adding one line of code. Getting all loggers out of your project is as easy as removing all connectors. And logmeister is packaged in one swc file which makes it easy to use.
 
-You connect to loggers with a ‘connector’. All 3rth party code of loggers is included in this package. So switching between loggers is as easy as adding one line of code. Getting all loggers out of your project is as easy as removing all connectors. Another thing is all code is in one swc file which makes it super maintainable.
-
-# Included loggers
+## Included loggers
 
 By default 6 loggers are included. These are the loggers I happen to use over the last years. It's really easy to add another logger skip to the ‘Creating your own connector’ section if you want to know how.
 
 Included loggers:
 
-* Firebug (NEW!)
+* Firebug
 * Trazzle
 * Sosmax
 * Flash (regular traces)
@@ -20,11 +18,11 @@ Included loggers:
 * Yalog
 * Server (to be open sourced)
 
-# Usage
+## Usage
 
-## Adding loggers
+### Adding loggers
 
-First you need to add one, or multiple Connectors to LogMeister.
+First you need to add one or multiple connectors to LogMeister.
 
 Below you can see how to add all loggers (not recommended).
 
@@ -37,11 +35,12 @@ LogMeister.addLogger(new SosMaxConnector());
 LogMeister.addLogger(new MonsterDebuggerConnector(stage));
 LogMeister.addLogger(new YalogConnector());
 LogMeister.addLogger(new FlashConnector());
+LogMeister.addLogger(new FirebugConnector());
 </pre>
 
 As you can see Trazzle and the MonsterDebugger need the stage as a reference.
 
-## Logging
+### Logging
 
 If you want to send a log to all your active loggers pick one of the following functions. (You don't need to import anything!!)
 
@@ -59,12 +58,12 @@ trace('regular trace');
 
 # Creating your own connector
 
-Creating a custom connector for your own logger is not hard, as an example I added the FlashLogger below. The FlashLogger sends regular traces.
+Creating a custom connector for your own logger is not hard, as an example I created a CustomLogger below, this logger outputs 'traces'
 
 <pre>
 package logmeister.connectors {
 
-	public class FlashConnector extends LogMeisterConnector implements ILogMeisterConnector {
+	public class CustomConnector extends AbstractConnector implements ILogMeisterConnector {
 
 		public function init() : void {
 		}

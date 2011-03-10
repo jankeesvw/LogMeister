@@ -27,6 +27,43 @@
  *	Logmeister version 1.6
  *	
  */
-package  logmeister {
-	public namespace NSLogMeister = "http://github.com/base42/LogMeister";
+package logmeister.connectors {
+	import flash.system.Capabilities;
+
+	internal class AbstractConnector {
+
+		protected var _firstLineNumber : uint = 5;
+
+		protected function getSender() : String {
+			var senderCompleteErrorLine : String = new Error().getStackTrace().split("\n")[_firstLineNumber];
+			try {
+				
+				var os : String = Capabilities.os;
+
+				var s : String;
+				var reg : RegExp;
+				var sender : Array;
+				if (os.indexOf("Win") == 0) {
+					// windows
+					reg = new RegExp(/\s([\w\/]*\(\))\[[\w.:\\]+\\(\w*\.as):(\d+)\]/gi);
+					sender = reg.exec(senderCompleteErrorLine);
+					s = sender[1] + "@" + sender[2] + ":" + sender[3] ;
+				} else { 
+					// mac
+					reg = new RegExp(/[\[|\/]([\w.:]+)?:(\d+)\]/gi);
+					sender = reg.exec(senderCompleteErrorLine);
+					s = sender[1] + ":" + sender[2];
+				}
+								
+				if(s.indexOf("NaN") == -1) {
+					return s; // add -verbose-stacktracing=true to the compiler settings
+				} else {
+					return senderCompleteErrorLine;
+				}
+			} catch (e : Error) {
+				return senderCompleteErrorLine;
+			}
+			return "Error getting sender";
+		}
+	}
 }

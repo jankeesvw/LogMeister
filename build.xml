@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="Build" basedir="." default="build logger swc">
-
-	<target name="build logger swc">
-		<fdt.launch.library debug="false" projectname="LogMeister" autoaddclasspath="false" target="bin/logmeister.swc" compilerarguments="-library-path {flexSDK}/frameworks/locale/en_US -include-sources ${basedir}/source/logmeister ${basedir}/source/loggers/monsterdebugger ${basedir}/source/loggers/trazzle ${basedir}/source/loggers/yala" />
-	</target>
-
-</project>

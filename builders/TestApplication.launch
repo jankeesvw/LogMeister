@@ -17,8 +17,8 @@
 <stringAttribute key="PRE_COMPILE_ANT" value=""/>
 <stringAttribute key="PROJECT_NAME" value="LogMeister"/>
 <stringAttribute key="PUBLISHER_ID" value=""/>
-<booleanAttribute key="START_SWF_ENABLED" value="false"/>
-<stringAttribute key="START_SWF_LOCATION" value="Main.swf"/>
+<booleanAttribute key="START_SWF_ENABLED" value="true"/>
+<stringAttribute key="START_SWF_LOCATION" value="test/Main.swf"/>
 <stringAttribute key="START_SWF_WITH" value="External SWF Viewer"/>
 <booleanAttribute key="USE_GLOBAL_FCSH_LOCATION" value="true"/>
 <booleanAttribute key="USE_PROJECT_COMPILER_ARGUMENTS" value="false"/>

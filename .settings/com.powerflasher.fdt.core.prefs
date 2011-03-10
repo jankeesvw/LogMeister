@@ -1,11 +1,13 @@
-#Wed Dec 15 21:45:18 CET 2010
+#Thu Mar 10 09:51:29 CET 2011
 =false
-com.powerflasher.fdt.core.CompilerArguments=-target-player\={playerVersion}\n-library-path {flexSDK}/frameworks/locale/en_US
+com.powerflasher.fdt.core.CompatiblePlayers=External_SWF_Viewer\:Browser\:Standalone_Flash_Player
+com.powerflasher.fdt.core.CompilerArguments=-static-link-runtime-shared-libraries\=true\n-target-player\={playerVersion}\n-library-path+\="{flexSDK}/frameworks/locale/en_US"\n-default-size\=550,400
+com.powerflasher.fdt.core.DefaultPlayer=External_SWF_Viewer
 com.powerflasher.fdt.core.Language=AS3
 com.powerflasher.fdt.core.LanguageType=Flex_3_SDK_0_Pure
 com.powerflasher.fdt.core.PassClasspath=true
 com.powerflasher.fdt.core.PassMainclass=true
-com.powerflasher.fdt.core.PassRsls=true
+com.powerflasher.fdt.core.PassRsls=false
 com.powerflasher.fdt.core.PassSwcs=true
 com.powerflasher.fdt.core.PlayerVersion=9
 com.powerflasher.fdt.core.ProjectTypeHint=AS 3
