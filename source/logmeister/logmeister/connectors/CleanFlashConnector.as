@@ -28,42 +28,40 @@
  *	
  */
 package logmeister.connectors {
-
-	public class FlashConnector extends AbstractConnector implements ILogMeisterConnector {
-
+	public class CleanFlashConnector  implements ILogMeisterConnector {
 		public function init() : void {
 		}
 
 		public function sendDebug(...args) : void {
-			trace("debug    : " + args + " " + getSender());
+			trace("debug    : " + args);
 		}
 
 		public function sendInfo(...args) : void {
-			trace("info     : " + args + " " + getSender());
+			trace("info     : " + args);
 		}
 
 		public function sendNotice(...args) : void {
-			trace("notice   : " + args + " " + getSender());
+			trace("notice   : " + args);
 		}
 
 		public function sendWarn(...args) : void {
-			trace("warn     : " + args + " " + getSender());
+			trace("warn     : " + args);
 		}
 
 		public function sendError(...args) : void {
-			trace("error    : " + args + " " + getSender());
+			trace("error    : " + args);
 		}
 
 		public function sendFatal(...args) : void {
-			trace("fatal    : " + args + " " + getSender());
+			trace("fatal    : " + args);
 		}
 
 		public function sendCritical(...args) : void {
-			trace("critical : " + args + " " + getSender());
+			trace("critical : " + args);
 		}
 
 		public function sendStatus(...args) : void {
-			trace("status   : " + args + " " + getSender());
+			trace("status   : " + args);
 		}
 	}
 }

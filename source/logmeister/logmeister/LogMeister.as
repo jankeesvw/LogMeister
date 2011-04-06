@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.6
+ *	Logmeister version 1.7
  *	
  */
 package logmeister {
@@ -34,7 +34,7 @@ package logmeister {
 
 	public class LogMeister {
 
-		public static const VERSION : String = "Version 1.6";
+		public static const VERSION : String = "Version 1.7";
 		private static var loggers : Array = new Array();
 
 		/*

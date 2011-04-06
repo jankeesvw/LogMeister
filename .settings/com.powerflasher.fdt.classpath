@@ -6,4 +6,5 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">source/loggers/trazzle</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="source" useAsSharedCode="false">source/loggers/yala</AS3Classpath>
     <AS3Classpath generateProblems="true" sdkBased="false" type="source" useAsSharedCode="false">source/logmeister</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">source/loggers/MonsterDebugger.swc</AS3Classpath>
 </AS3Classpath>

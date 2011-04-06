@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.6
+ *	Logmeister version 1.7
  *	
  *	Thanks to Eric-Paul Lecluse for the help on this connector
  *	Thanks to Riccardo Prandini for the update

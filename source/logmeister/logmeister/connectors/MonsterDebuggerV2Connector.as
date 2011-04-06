@@ -28,42 +28,60 @@
  *	
  */
 package logmeister.connectors {
+	import nl.demonsters.debugger.MonsterDebugger;
 
-	public class FlashConnector extends AbstractConnector implements ILogMeisterConnector {
+	import flash.display.DisplayObject;
+
+	public class MonsterDebuggerV2Connector extends AbstractConnector implements ILogMeisterConnector {
+
+		private var _stage : DisplayObject;
+		private static const color_debug : uint = 0xa6e22e;
+		private static const color_info : uint = 0x66d9ef;
+		private static const color_notice : uint = 0xae81ff;
+		private static const color_warning : uint = 0xfd971f;
+		private static const color_error : uint = 0xFF0A0A;
+		private static const color_fatal : uint = 0xFF8000;
+		private static const color_critical : uint = 0xf92672;
+		private static const color_status : uint = 0x33FF00;
+
+		public function MonsterDebuggerV2Connector(inStage : DisplayObject) {
+			_stage = inStage;
+		}
 
 		public function init() : void {
+			new MonsterDebugger(_stage);
 		}
 
 		public function sendDebug(...args) : void {
-			trace("debug    : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_debug);
 		}
 
 		public function sendInfo(...args) : void {
-			trace("info     : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_info);
 		}
 
 		public function sendNotice(...args) : void {
-			trace("notice   : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_notice);
 		}
 
 		public function sendWarn(...args) : void {
-			trace("warn     : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_warning);
 		}
 
 		public function sendError(...args) : void {
-			trace("error    : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_error);
 		}
 
 		public function sendFatal(...args) : void {
-			trace("fatal    : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_fatal);
 		}
 
 		public function sendCritical(...args) : void {
-			trace("critical : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_critical);
 		}
 
 		public function sendStatus(...args) : void {
-			trace("status   : " + args + " " + getSender());
+			MonsterDebugger.trace(getSender(), args[0][0][0], color_status);
 		}
 	}
 }

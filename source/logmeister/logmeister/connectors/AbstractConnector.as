@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.6
+ *	Logmeister version 1.7
  *	
  */
 package logmeister.connectors {
@@ -35,6 +35,9 @@ package logmeister.connectors {
 		protected var _firstLineNumber : uint = 5;
 
 		protected function getSender() : String {
+			
+			if(!Capabilities.isDebugger) return "";
+			
 			var senderCompleteErrorLine : String = new Error().getStackTrace().split("\n")[_firstLineNumber];
 			try {
 				
