@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister.connectors {
@@ -33,7 +33,6 @@ package logmeister.connectors {
 	import flash.display.DisplayObject;
 
 	public class MonsterDebuggerV2Connector extends AbstractConnector implements ILogMeisterConnector {
-
 		private var _stage : DisplayObject;
 		private static const color_debug : uint = 0xa6e22e;
 		private static const color_info : uint = 0x66d9ef;
@@ -53,35 +52,35 @@ package logmeister.connectors {
 		}
 
 		public function sendDebug(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_debug);
+			MonsterDebugger.trace(getSender(), args[0], color_debug);
 		}
 
 		public function sendInfo(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_info);
+			MonsterDebugger.trace(getSender(), args[0], color_info);
 		}
 
 		public function sendNotice(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_notice);
+			MonsterDebugger.trace(getSender(), args[0], color_notice);
 		}
 
 		public function sendWarn(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_warning);
+			MonsterDebugger.trace(getSender(), args[0], color_warning);
 		}
 
 		public function sendError(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_error);
+			MonsterDebugger.trace(getSender(), args[0], color_error);
 		}
 
 		public function sendFatal(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_fatal);
+			MonsterDebugger.trace(getSender(), args[0], color_fatal);
 		}
 
 		public function sendCritical(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_critical);
+			MonsterDebugger.trace(getSender(), args[0], color_critical);
 		}
 
 		public function sendStatus(...args) : void {
-			MonsterDebugger.trace(getSender(), args[0][0][0], color_status);
+			MonsterDebugger.trace(getSender(), args[0], color_status);
 		}
 	}
 }

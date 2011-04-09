@@ -8,6 +8,7 @@
 <stringAttribute key="MAIN_CLASS" value="examples/as3/Main.as"/>
 <stringAttribute key="OUTPUT" value="test/Main.swf"/>
 <booleanAttribute key="PASS_CP" value="true"/>
+<booleanAttribute key="PASS_EXTERNS" value="true"/>
 <booleanAttribute key="PASS_MAIN_CLASS" value="true"/>
 <booleanAttribute key="PASS_RSLS" value="true"/>
 <booleanAttribute key="PASS_SWCS" value="true"/>

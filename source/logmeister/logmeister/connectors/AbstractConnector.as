@@ -24,49 +24,36 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister.connectors {
 	import flash.system.Capabilities;
 
 	internal class AbstractConnector {
-
-		protected var _firstLineNumber : uint = 5;
+		protected var _senderLineNumber : uint = 7;
 
 		protected function getSender() : String {
-			
-			if(!Capabilities.isDebugger) return "";
-			
-			var senderCompleteErrorLine : String = new Error().getStackTrace().split("\n")[_firstLineNumber];
-			try {
-				
-				var os : String = Capabilities.os;
+			if (!Capabilities.isDebugger) return "";
 
-				var s : String;
-				var reg : RegExp;
-				var sender : Array;
-				if (os.indexOf("Win") == 0) {
-					// windows
-					reg = new RegExp(/\s([\w\/]*\(\))\[[\w.:\\]+\\(\w*\.as):(\d+)\]/gi);
-					sender = reg.exec(senderCompleteErrorLine);
-					s = sender[1] + "@" + sender[2] + ":" + sender[3] ;
-				} else { 
-					// mac
-					reg = new RegExp(/[\[|\/]([\w.:]+)?:(\d+)\]/gi);
-					sender = reg.exec(senderCompleteErrorLine);
-					s = sender[1] + ":" + sender[2];
+			try {
+				var sender : String = new Error().getStackTrace().split("\n")[_senderLineNumber];
+
+				var senderDetails : Array = sender.match(/at\s([a-zA-Z0-9_]+)[\/|\\]([a-zA-Z0-9_]+)\(\).+:([\d]+)/);
+
+				if (!senderDetails) {
+					senderDetails = sender.match(/at\s([a-zA-Z0-9_]+)\(\).+[\/|\\]([a-zA-Z0-9_]+)\.as:([\d]+)/);
 				}
-								
-				if(s.indexOf("NaN") == -1) {
-					return s; // add -verbose-stacktracing=true to the compiler settings
-				} else {
-					return senderCompleteErrorLine;
-				}
+
+				var className : String = senderDetails[1];
+				var functionName : String = senderDetails[2];
+				var lineNumber : String = senderDetails[3];
+
+				return className + "." + functionName + " (" + lineNumber + ") ";
 			} catch (e : Error) {
-				return senderCompleteErrorLine;
+				return "";
 			}
-			return "Error getting sender";
+			return "";
 		}
 	}
 }

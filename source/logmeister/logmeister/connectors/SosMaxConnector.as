@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  *	Thanks to Eric-Paul Lecluse for the help on this connector
  *	Thanks to Riccardo Prandini for the update
@@ -40,7 +40,6 @@ package logmeister.connectors {
 	import flash.utils.Timer;
 
 	public class SosMaxConnector extends AbstractConnector implements ILogMeisterConnector {
-
 		private var socket : XMLSocket;
 		private var _stack : Array;
 		private var _timer : Timer;
@@ -52,7 +51,7 @@ package logmeister.connectors {
 			socket.addEventListener(Event.CONNECT, handleOnConnect);
 			socket.addEventListener(IOErrorEvent.IO_ERROR, onError);
 			socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
-            
+
 			_stack = [];
 			_timer = new Timer(2000);
 			_timer.addEventListener(TimerEvent.TIMER, tryToReconnect);
@@ -120,12 +119,12 @@ package logmeister.connectors {
 				var m : Message = _stack.shift() as Message;
 				sendSOSMessage(m.message, m.origin, m.key);
 			}
-		}    
+		}
 
 		private function sendSOSMessage(inMessage : String, inOrigin : String, inKey : String = "debug") : void {
 			if (_isConnected) {
 				try {
-					socket.send("!SOS<showMessage key='" + inKey + "'>" + inMessage.replace(/&/g, "&amp;").replace(/\>/gi, "&gt;").replace(/\</gi, "&lt;") + " \t\t :" + inOrigin + "</showMessage>");
+					socket.send("!SOS<showMessage key='" + inKey + "'>" + inOrigin + " " + inMessage.replace(/&/g, "&amp;").replace(/\>/gi, "&gt;").replace(/\</gi, "&lt;") + "</showMessage>");
 				} catch (e : Error) {
 					// ignore error
 					trace("no debugger found");
@@ -139,10 +138,7 @@ package logmeister.connectors {
 		}
 	}
 }
-
-
 class Message {
-
 	public var key : String;
 	public var origin : String;
 	public var message : String;

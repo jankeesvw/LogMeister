@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister.connectors {
@@ -38,12 +38,11 @@ package logmeister.connectors {
 	import flash.display.Stage;
 
 	public class TrazzleConnector extends AbstractConnector implements ILogMeisterConnector {
-
 		private var _stage : Stage;
 		private var _title : String;
 		private var _monitorPerformance : Boolean;
 
-		public function TrazzleConnector(inStage : Stage, inTitle : String,inMonitorPerformance : Boolean = true) {
+		public function TrazzleConnector(inStage : Stage, inTitle : String, inMonitorPerformance : Boolean = true) {
 			_monitorPerformance = inMonitorPerformance;
 			_stage = inStage;
 			_title = inTitle;
@@ -51,7 +50,7 @@ package logmeister.connectors {
 
 		public function init() : void {
 			zz_init(_stage, _title);
-			if(_monitorPerformance) zz_monitor(true);
+			if (_monitorPerformance) zz_monitor(true);
 		}
 
 		public function sendDebug(... args) : void {
@@ -86,14 +85,14 @@ package logmeister.connectors {
 			send("s " + args);
 		}
 
-		public static function logDisplayObject(inDisplayObject : DisplayObject,inTransparent : Boolean = true,inFillColor : uint = 0xffffff) : void {
+		public static function logDisplayObject(inDisplayObject : DisplayObject, inTransparent : Boolean = true, inFillColor : uint = 0xffffff) : void {
 			var bd : BitmapData = new BitmapData(inDisplayObject.width, inDisplayObject.height, inTransparent, inTransparent ? 0x00000000 : inFillColor);
 			bd.draw(inDisplayObject);
 			TrazzleLogger.instance().logBitmapData(bd);
 		}
 
 		private function send(...rest) : void {
-			TrazzleLogger.instance().log(rest.toString(), 3);
+			TrazzleLogger.instance().log(rest.toString(), 5);
 		}
 
 		public static function getMenu() : StatusBar {

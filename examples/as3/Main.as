@@ -26,6 +26,17 @@ package {
 			var textField : TextField = new TextField();
 			textField.text = "Check your logger...";
 			addChild(textField);
+
+
+			var sender : String = new Error().getStackTrace();
+			trace(sender);
+
+			var textField2 : TextField = new TextField();
+			textField2.y = 30;
+			textField2.text = "Example stacktrace: \n" + sender;
+			textField2.width = stage.stageWidth;
+			textField2.height = 50;
+			addChild(textField2);
 			
 			LogMeister.addLogger(new TrazzleConnector(stage, "Test application"));
 			LogMeister.addLogger(new SosMaxConnector());
@@ -34,9 +45,9 @@ package {
 			LogMeister.addLogger(new FlashConnector());
 			LogMeister.addLogger(new FirebugConnector());
 			
+			error('error');
 			critical('critical');
 			debug('debug');
-			error('error');
 			fatal('fatal');
 			info('info');
 			notice('notice');

@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister.connectors {
@@ -34,7 +34,6 @@ package logmeister.connectors {
 	import flash.net.URLVariables;
 
 	public class ServerConnector extends AbstractConnector implements ILogMeisterConnector {
-
 		public var serverPath : String;
 		public var projectId : String;
 		public var logLevels : String;
@@ -99,18 +98,18 @@ package logmeister.connectors {
 			for (var i : uint = 0;i < leni;i++) {
 				errs[i] = String(errs[i]).substring(1, String(errs[i]).length);
 			}
-			
+
 			errs.shift();
 			errs.shift();
 			errs.shift();
-			
+
 			var vars : URLVariables = new URLVariables();
 			vars["data[Log][project_id]"] = projectId;
 			vars["data[Log][level]"] = level;
 			vars["data[Log][stacktrace]"] = errs.join("\n");
 			vars["data[Log][build_info]"] = buildInfo;
 			vars["data[Log][message]"] = args;
-			
+
 			request.data = vars;
 			request.method = URLRequestMethod.POST;
 			loader.load(request);

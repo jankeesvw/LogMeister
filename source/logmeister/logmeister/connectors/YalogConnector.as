@@ -24,47 +24,46 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister.connectors {
 	import nl.acidcats.yalog.Yalog;
 
 	public class YalogConnector extends AbstractConnector implements ILogMeisterConnector {
-
 		public function init() : void {
 		}
 
 		public function sendDebug(...args : *) : void {
-			Yalog.debug(String(args), getSender());
+			Yalog.debug(getSender(), String(args));
 		}
 
 		public function sendInfo(...args : *) : void {
-			Yalog.info(String(args), getSender());
+			Yalog.info(getSender(), String(args));
 		}
 
 		public function sendNotice(...args : *) : void {
-			Yalog.info(String(args), getSender());
+			Yalog.info(getSender(), String(args));
 		}
 
 		public function sendWarn(...args : *) : void {
-			Yalog.warn(String(args), getSender());
+			Yalog.warn(getSender(), String(args));
 		}
 
 		public function sendError(...args : *) : void {
-			Yalog.error(String(args), getSender());
+			Yalog.error(getSender(), String(args));
 		}
 
 		public function sendFatal(...args : *) : void {
-			Yalog.fatal(String(args), getSender());
+			Yalog.fatal(getSender(), String(args));
 		}
 
 		public function sendCritical(...args : *) : void {
-			Yalog.error(String(args), getSender());
+			Yalog.error(getSender(), String(args));
 		}
 
 		public function sendStatus(...args : *) : void {
-			Yalog.info(String(args), getSender());
+			Yalog.info(getSender(), String(args));
 		}
 	}
 }

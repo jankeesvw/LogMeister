@@ -24,9 +24,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
-package  logmeister {
+package logmeister {
 	public namespace NSLogMeister = "http://github.com/base42/LogMeister";
 }

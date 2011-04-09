@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package logmeister {
@@ -33,9 +33,31 @@ package logmeister {
 	import flash.utils.getQualifiedClassName;
 
 	public class LogMeister {
-
-		public static const VERSION : String = "Version 1.7";
+		public static const VERSION : String = "version 1.8";
 		private static var loggers : Array = new Array();
+		// what's enabled
+		private static var _debug : Boolean = true;
+		private static var _info : Boolean = true;
+		private static var _notice : Boolean = true;
+		private static var _status : Boolean = true;
+		private static var _warn : Boolean = true;
+		private static var _critical : Boolean = true;
+		private static var _error : Boolean = true;
+		private static var _fatal : Boolean = true;
+
+		/*
+		 * Enable or disable certain log levels
+		 */
+		public static function enableMessages(debug : Boolean, info : Boolean, notice : Boolean, status : Boolean, warn : Boolean, critical : Boolean, error : Boolean, fatal : Boolean) : void {
+			_debug = debug;
+			_info = info;
+			_notice = notice;
+			_status = status;
+			_warn = warn;
+			_critical = critical;
+			_error = error;
+			_fatal = fatal;
+		}
 
 		/*
 		 * Add an Array of loggers for examples see the connectors package
@@ -50,9 +72,8 @@ package logmeister {
 		 * Add a logger connector (@see ILogMeisterConnector), a logger cannot be added twice
 		 */
 		public static function addLogger(inLogger : ILogMeisterConnector) : void {
-			
 			for each (var logger : ILogMeisterConnector in loggers) {
-				if(getQualifiedClassName(logger) == getQualifiedClassName(inLogger)) {
+				if (getQualifiedClassName(logger) == getQualifiedClassName(inLogger)) {
 					// ignore double added loggers
 					return;
 				}
@@ -66,54 +87,62 @@ package logmeister {
 		 * Clear the list of active Loggers, after this statement you will not recieve any debug messages
 		 */
 		public static function clearLoggers() : void {
-			loggers = new Array();	
+			loggers = new Array();
 		}
 
 		NSLogMeister static function debug(... args) : void {
+			if (!_debug) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendDebug(args); 
+				logger.sendDebug.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function info(... args) : void {
+			if (!_info) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendInfo(args); 
+				logger.sendInfo.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function notice(... args) : void {
+			if (!_notice) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendNotice(args); 
+				logger.sendNotice.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function warn(... args) : void {
+			if (!_warn) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendWarn(args); 
+				logger.sendWarn.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function error(... args) : void {
+			if (!_error) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendError(args); 
+				logger.sendError.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function fatal(... args) : void {
+			if (!_fatal) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendFatal(args); 
+				logger.sendFatal.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function critical(... args) : void {
+			if (!_critical) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendCritical(args); 
+				logger.sendCritical.apply(null, args);
 			}
 		}
 
 		NSLogMeister static function status(... args) : void {
+			if (!_status) return;
 			for each (var logger : ILogMeisterConnector in loggers) {
-				logger.sendStatus(args); 
+				logger.sendStatus.apply(null, args);
 			}
 		}
 	}

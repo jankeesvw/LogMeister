@@ -6,17 +6,18 @@ You connect to loggers with a ‘connector’. All 3rth party code of loggers is
 
 ## Included loggers
 
-By default 6 loggers are included. These are the loggers I happen to use over the last years. It's really easy to add another logger skip to the ‘Creating your own connector’ section if you want to know how.
+By default 8 loggers are included. These are the loggers I happen to use over the last years. It's really easy to add another logger skip to the ‘Creating your own connector’ section if you want to know how.
 
 Included loggers:
 
 * Firebug
-* Trazzle
-* Sosmax
 * Flash (regular traces)
-* Monster Debugger
-* Yalog
+* Monster Debugger v2
+* Monster Debugger v3 (NEW!)
 * Server (to be open sourced)
+* Sosmax
+* Trazzle
+* Yalog
 
 ## Usage
 
@@ -33,6 +34,7 @@ import logmeister.connectors.*;
 LogMeister.addLogger(new TrazzleConnector(stage, "Application Name"));
 LogMeister.addLogger(new SosMaxConnector());
 LogMeister.addLogger(new MonsterDebuggerConnector(stage));
+LogMeister.addLogger(new MonsterDebuggerV2Connector(stage));
 LogMeister.addLogger(new YalogConnector());
 LogMeister.addLogger(new FlashConnector());
 LogMeister.addLogger(new FirebugConnector());

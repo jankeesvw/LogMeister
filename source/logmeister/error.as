@@ -24,14 +24,15 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.7
+ *	Logmeister version 1.8
  *	
  */
 package {
 	import logmeister.LogMeister;
 	import logmeister.NSLogMeister;
-	public function error( ...args ) : void {
+
+	public function error(...args) : void {
 		use namespace NSLogMeister;
-		LogMeister.error(args);
+		LogMeister.error.apply(this, args);
 	}
 }
