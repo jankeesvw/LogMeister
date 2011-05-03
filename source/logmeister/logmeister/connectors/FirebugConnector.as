@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.8
+ *	Logmeister version 1.8.1
  *	
  */
 package logmeister.connectors {
@@ -40,7 +40,7 @@ package logmeister.connectors {
 		}
 
 		public function sendDebug(...args : *) : void {
-			ExternalInterface.call(LOG_FUNCTION, "DEBUG");
+			ExternalInterface.call(LOG_FUNCTION, String(args));
 		}
 
 		public function sendInfo(...args : *) : void {
