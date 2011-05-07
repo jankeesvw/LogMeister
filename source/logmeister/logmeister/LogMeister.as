@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.8.1
+ *	Logmeister version 1.8.2
  *	
  */
 package logmeister {
@@ -33,7 +33,7 @@ package logmeister {
 	import flash.utils.getQualifiedClassName;
 
 	public class LogMeister {
-		public static const VERSION : String = "version 1.8.1";
+		public static const VERSION : String = "version 1.8.2";
 		private static var loggers : Array = new Array();
 		// what's enabled
 		private static var _debug : Boolean = true;

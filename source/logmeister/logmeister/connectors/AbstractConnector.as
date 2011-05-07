@@ -24,7 +24,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *	
- *	Logmeister version 1.8.1
+ *	Logmeister version 1.8.2
  *	
  */
 package logmeister.connectors {
@@ -39,10 +39,10 @@ package logmeister.connectors {
 			try {
 				var sender : String = new Error().getStackTrace().split("\n")[_senderLineNumber];
 
-				var senderDetails : Array = sender.match(/at\s([a-zA-Z0-9_]+)[\/|\\]([a-zA-Z0-9_]+)\(\).+:([\d]+)/);
+				var senderDetails : Array = sender.match(/at\s([a-zA-Z0-9_\.:]+)[\/|\\]([a-zA-Z0-9_]+)\(\).+:([\d]+)/);
 
 				if (!senderDetails) {
-					senderDetails = sender.match(/at\s([a-zA-Z0-9_]+)\(\).+[\/|\\]([a-zA-Z0-9_]+)\.as:([\d]+)/);
+					senderDetails = sender.match(/at\s([a-zA-Z0-9_\.:]+)\(\).+[\/|\\]([a-zA-Z0-9_]+)\.as:([\d]+)/);
 				}
 
 				var className : String = senderDetails[1];
