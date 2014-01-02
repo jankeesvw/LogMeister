@@ -27,7 +27,7 @@ First you need to add one or multiple connectors to LogMeister.
 
 Below you can see how to add all loggers (not recommended).
 
-<pre>
+```as3
 import logmeister.LogMeister;
 import logmeister.connectors.*;
 
@@ -38,7 +38,7 @@ LogMeister.addLogger(new MonsterDebuggerV2Connector(stage));
 LogMeister.addLogger(new YalogConnector());
 LogMeister.addLogger(new FlashConnector());
 LogMeister.addLogger(new FirebugConnector());
-</pre>
+```
 
 As you can see Trazzle and the MonsterDebugger need the stage as a reference.
 
@@ -46,7 +46,7 @@ As you can see Trazzle and the MonsterDebugger need the stage as a reference.
 
 If you want to send a log to all your active loggers pick one of the following functions. (You don't need to import anything!!)
 
-<pre>
+```as3
 critical('critical');
 debug('debug');
 error('error');
@@ -56,51 +56,51 @@ notice('notice');
 status('status');
 warn('warn');
 trace('regular trace');
-</pre>
+```
 
 # Creating your own connector
 
 Creating a custom connector for your own logger is not hard, as an example I created a CustomLogger below, this logger outputs 'traces'
 
-<pre>
+```as3
 package logmeister.connectors {
 
-	public class CustomConnector extends AbstractConnector implements ILogMeisterConnector {
+  public class CustomConnector extends AbstractConnector implements ILogMeisterConnector {
 
-		public function init() : void {
-		}
+    public function init() : void {
+    }
 
-		public function sendDebug(...args) : void {
-			trace("debug    : " + args + " " + getSender());
-		}
+    public function sendDebug(...args) : void {
+      trace("debug    : " + args + " " + getSender());
+    }
 
-		public function sendInfo(...args) : void {
-			trace("info     : " + args + " " + getSender());
-		}
+    public function sendInfo(...args) : void {
+      trace("info     : " + args + " " + getSender());
+    }
 
-		public function sendNotice(...args) : void {
-			trace("notice   : " + args + " " + getSender());
-		}
+    public function sendNotice(...args) : void {
+      trace("notice   : " + args + " " + getSender());
+    }
 
-		public function sendWarn(...args) : void {
-			trace("warn     : " + args + " " + getSender());
-		}
+    public function sendWarn(...args) : void {
+      trace("warn     : " + args + " " + getSender());
+    }
 
-		public function sendError(...args) : void {
-			trace("error    : " + args + " " + getSender());
-		}
+    public function sendError(...args) : void {
+      trace("error    : " + args + " " + getSender());
+    }
 
-		public function sendFatal(...args) : void {
-			trace("fatal    : " + args + " " + getSender());
-		}
+    public function sendFatal(...args) : void {
+      trace("fatal    : " + args + " " + getSender());
+    }
 
-		public function sendCritical(...args) : void {
-			trace("critical : " + args + " " + getSender());
-		}
+    public function sendCritical(...args) : void {
+      trace("critical : " + args + " " + getSender());
+    }
 
-		public function sendStatus(...args) : void {
-			trace("status   : " + args + " " + getSender());
-		}
-	}
+    public function sendStatus(...args) : void {
+      trace("status   : " + args + " " + getSender());
+    }
+  }
 }
-</pre>
+```
