@@ -1,5 +1,7 @@
 # Philosophy behind LogMeister
 
+**NOTICE: THIS PROJECT IS NO LONGER MAINTAINED. **
+
 There are several Loggers used by Flash developers, some like Trazzle and others like the MonsterDebugger. I switch between loggers from time to time. I like Trazzle because it's super fast and I use MonsterDebugger because is really extensive. Therefor I needed an easy way to switch between loggers. That's why I created LogMeister. LogMeister is a simple logger wrapper which you can use for every loggers (I have used in the last four years).
 
 You connect to loggers with a ‘connector’. All 3rth party code of loggers is included in this package, so switching loggers is as easy as adding one line of code. Getting all loggers out of your project is as easy as removing all connectors. And logmeister is packaged in one swc file which makes it easy to use.
